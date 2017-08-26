@@ -2,15 +2,19 @@
   <div>
       <p>Quote</p>
       <input v-model="texte" placeholder="Your quote">
-      <button @click="add">Add Quote</button>
+      <button @click="add()">Add Quote</button>
       <p>{{ texte }}</p>
+      
   </div>
 </template>
 
 <script>
+    import { Bus } from '../main.js';
+
 export default {
     data: function() {
         return {  
+            quotesIn: false,
             chargedBarX : 0,
             chargedBar: {
                     backgroundColor: 'green',
@@ -27,6 +31,7 @@ export default {
             this.chargedBar.width = this.chargedBarX + '%';
             console.log(this.chargedBar.width );
             this.quotesIn = true;
+            // Bus.$emit('add-clicked', this.quotesIn);
         },
     }
 }

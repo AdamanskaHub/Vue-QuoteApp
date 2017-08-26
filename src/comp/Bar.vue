@@ -7,10 +7,16 @@
 </template>
 
 <script>
+    import { Bus } from '../main.js';
+
+    // Bus.$on('add-clicked', quotesIn => {
+    //     console.log(quotesIn);
+    // });
+
     export default {
         data: function() {
             return {
-                quotesIn: false,
+                // quotesIn: false,
                 // chargedBar: {
                 //     backgroundColor: 'green',
                 //     margin: 0,
@@ -24,7 +30,8 @@
             this.chargedBar.width = '0%';
             this.chargedBar.backgroundColor = 'green';
             }
-        }
+        },
+        
         
     }
 </script>
