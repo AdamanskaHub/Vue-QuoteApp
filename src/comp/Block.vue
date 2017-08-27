@@ -2,8 +2,9 @@
 
 
       <div class="row">
-          <app-quote v-for="item in quotes"> {{ item }}</app-quote>
-           
+          <app-quote v-for="(item, index) in quotes" @click.native="deleteQuote(index)"> {{ item }}</app-quote>
+          <!-- je dois retourner dans app.vue et écouter l'event delete, là où j'appelle app-block -->
+           <!-- native semble faire que ça s'applique à tout le component comme zone de click-->
     
       </div>
 
@@ -17,6 +18,11 @@
         props: ['quotes'],
         components: {
             appQuote: Quote,
+        },
+        methods: {
+            deleteQuote(theIndex) {
+                this.$emit("quoteDeleted", theIndex);
+            }
         }
     }
 

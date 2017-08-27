@@ -4,7 +4,7 @@
       <div class="col-md-4">
           <div class="panel panel-default">
               <div class="panel-body quote">
-                  <!-- <slot></slot> -->
+                  <slot></slot>
               </div>
           </div>
       </div>
